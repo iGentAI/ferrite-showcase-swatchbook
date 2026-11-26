@@ -1,0 +1,21 @@
+{
+  "services": [
+    { "name": "requests", "primitive": "queue" },
+    { "name": "data", "primitive": "store" }
+  ],
+  "applications": [
+    {
+      "name": "swatchbook",
+      "artifact_key": "apps/swatchbook@v1",
+      "artifact_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bindings": [
+        { "handle": "requests", "kind": "queue", "service": "requests" },
+        { "handle": "data", "kind": "store", "service": "data" }
+      ],
+      "routes": [
+        { "prefix": "/", "binding": "requests", "kind": "api" }
+      ],
+      "compute": { "memory_mb": 64, "cpu_percent": 10 }
+    }
+  ]
+}

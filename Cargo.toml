@@ -1,0 +1,16 @@
+[package]
+name = "swatchbook"
+version = "0.1.0"
+edition = "2021"
+description = "A community colour-palette gallery whose design is data: the Ferrite 'same data, two designs' demo."
+publish = false
+
+[dependencies]
+# The public SDK (https://github.com/iGentAI/ferrite-sdk), cloned beside this
+# repository. Ferrite rewrites this path to the platform's own copy at build
+# time.
+ferrite-app = { path = "../ferrite-sdk/ferrite-app" }
+
+[dev-dependencies]
+ferrite-app-test = { path = "../ferrite-sdk/ferrite-app-test" }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
